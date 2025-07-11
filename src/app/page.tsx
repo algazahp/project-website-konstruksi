@@ -1,103 +1,152 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gradient-to-br from-blue-50 via-white to-teal-50 min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-blue-700 to-teal-700 text-white shadow-lg pt-32 pb-28">
+        {/* pt-32 agar konten tidak tertutup Navbar sticky, dan tidak ada border atau background hitam */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg leading-tight">
+            Membangun Impian Anda dengan
+            <span className="text-yellow-400"> Kualitas Terbaik</span>
+          </h1>
+          <p className="text-2xl md:text-3xl mb-10 text-blue-100 max-w-2xl mx-auto">
+            Kontraktor profesional dengan pengalaman puluhan tahun dalam konstruksi bangunan dan proyek besar.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/kontak"
+              className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-4 px-10 rounded-full shadow-lg text-lg transition-colors"
+            >
+              Konsultasi Gratis
+            </Link>
+            <Link
+              href="/layanan"
+              className="border-2 border-white hover:bg-white hover:text-blue-700 font-bold py-4 px-10 rounded-full text-lg transition-colors"
+            >
+              Lihat Layanan
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-20 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">
+              Layanan Kami
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Kami menyediakan berbagai layanan konstruksi dengan standar kualitas tinggi dan teknologi modern.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-600 text-center hover:scale-105 hover:shadow-2xl transition-transform">
+              <div className="flex justify-center mb-4">
+                <span className="text-5xl">🏗️</span>
+              </div>
+              <h3 className="text-2xl font-bold text-blue-800 mb-3">
+                Konstruksi Bangunan
+              </h3>
+              <p className="text-gray-600">
+                Pembangunan rumah, gedung, dan infrastruktur dengan teknologi modern dan tim profesional.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-teal-600 text-center hover:scale-105 hover:shadow-2xl transition-transform">
+              <div className="flex justify-center mb-4">
+                <span className="text-5xl">🔨</span>
+              </div>
+              <h3 className="text-2xl font-bold text-teal-800 mb-3">
+                Renovasi & Perbaikan
+              </h3>
+              <p className="text-gray-600">
+                Renovasi rumah dan gedung dengan desain terkini, material berkualitas, dan pengerjaan rapi.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-yellow-400 text-center hover:scale-105 hover:shadow-2xl transition-transform">
+              <div className="flex justify-center mb-4">
+                <span className="text-5xl">📐</span>
+              </div>
+              <h3 className="text-2xl font-bold text-yellow-600 mb-3">
+                Desain & Konsultasi
+              </h3>
+              <p className="text-gray-600">
+                Konsultasi arsitektur dan perencanaan bangunan sesuai kebutuhan Anda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">
+              Mengapa Memilih Kami?
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-blue-600 hover:shadow-2xl transition">
+              <div className="text-4xl mb-4">✅</div>
+              <h3 className="text-xl font-bold text-blue-800 mb-2">
+                Kualitas Terjamin
+              </h3>
+              <p className="text-gray-600">
+                Material premium dan pengerjaan profesional untuk hasil terbaik.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-teal-600 hover:shadow-2xl transition">
+              <div className="text-4xl mb-4">⏰</div>
+              <h3 className="text-xl font-bold text-teal-800 mb-2">
+                Tepat Waktu
+              </h3>
+              <p className="text-gray-600">
+                Komitmen menyelesaikan proyek sesuai jadwal yang disepakati.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-yellow-400 hover:shadow-2xl transition">
+              <div className="text-4xl mb-4">🏆</div>
+              <h3 className="text-xl font-bold text-yellow-600 mb-2">
+                Berpengalaman
+              </h3>
+              <p className="text-gray-600">
+                Puluhan tahun pengalaman dalam industri konstruksi dan proyek besar.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl p-8 text-center border-b-4 border-gray-400 hover:shadow-2xl transition">
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-xl font-bold text-gray-700 mb-2">
+                Harga Kompetitif
+              </h3>
+              <p className="text-gray-600">
+                Penawaran harga terbaik tanpa mengurangi kualitas dan layanan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="bg-gradient-to-r from-blue-700 to-teal-700 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+            Siap Memulai Proyek Anda?
+          </h2>
+          <p className="text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
+            Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik dari tim profesional kami.
+          </p>
+          <Link
+            href="/kontak"
+            className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-4 px-10 rounded-full shadow-lg text-lg transition-colors inline-block"
+          >
+            Hubungi Kami Sekarang
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
