@@ -28,7 +28,7 @@ export default function KontakPage() {
         // Optional: tampilkan notifikasi error
         alert('Gagal mengirim pesan. Silakan coba lagi.');
       }
-    } catch (err) {
+    } catch {
       // Optional: tampilkan notifikasi error
       alert('Terjadi kesalahan jaringan.');
     }
