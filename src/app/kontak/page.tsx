@@ -12,26 +12,27 @@ export default function KontakPage() {
   });
   const [showSuccess, setShowSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const res = await fetch('http://localhost:1337/api/pesan-kontaks', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ data: formData }),
-      });
-      if (res.ok) {
-        setShowSuccess(true);
-        setFormData({ name: '', email: '', phone: '', project: '', message: '' });
-        setTimeout(() => setShowSuccess(false), 3500);
-      } else {
-        // Optional: tampilkan notifikasi error
-        alert('Gagal mengirim pesan. Silakan coba lagi.');
-      }
-    } catch {
-      // Optional: tampilkan notifikasi error
-      alert('Terjadi kesalahan jaringan.');
-    }
+    // Simpan state pesan (jika ingin menampilkan notifikasi bisa di sini)
+    setShowSuccess(true);
+    const { name, email, phone, project, message } = formData;
+    // Format pesan WhatsApp
+    const projectText = project ? `\nJenis Proyek: ${project}` : '';
+    const waMessage =
+      `Halo, saya ingin konsultasi proyek konstruksi.\n` +
+      `Nama: ${name}\n` +
+      `Email: ${email}\n` +
+      `Telepon: ${phone}${projectText}\n` +
+      `Pesan: ${message}`;
+    // Nomor WhatsApp tujuan (tanpa +, gunakan format internasional)
+    const waNumber = '6281357464003';
+    const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+    // Reset form
+    setFormData({ name: '', email: '', phone: '', project: '', message: '' });
+    setTimeout(() => setShowSuccess(false), 3500);
+    // Redirect ke WhatsApp (tab yang sama)
+    window.location.href = waUrl;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
